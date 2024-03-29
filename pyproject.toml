@@ -16,6 +16,7 @@ optional = true
 
 [tool.poetry.group.lint.dependencies]
 pylint = "^3.1.0"
+mypy = "^1.9.0"
 
 [build-system]
 requires = ["poetry-core"]
