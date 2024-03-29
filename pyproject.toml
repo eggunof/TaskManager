@@ -17,6 +17,16 @@ optional = true
 [tool.poetry.group.lint.dependencies]
 pylint = "^3.1.0"
 mypy = "^1.9.0"
+black = "^24.3.0"
+
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+exclude = '''
+(
+    /.git
+)
+'''
 
 [build-system]
 requires = ["poetry-core"]
