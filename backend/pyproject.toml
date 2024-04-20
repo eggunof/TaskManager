@@ -30,11 +30,6 @@ isort = "^5.13.2"
 [tool.black]
 line-length = 120
 target-version = ["py310"]
-exclude = '''
-(
-    /.git
-)
-'''
 
 [tool.isort]
 profile = "black"

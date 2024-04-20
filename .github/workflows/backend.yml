@@ -19,10 +19,12 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: "poetry"
-          cache-dependency-path: poetry.lock
+          cache-dependency-path: backend/poetry.lock
 
       - name: Install dependencies
+        working-directory: backend
         run: poetry install --with dev,lint
 
       - name: Lint with pre-commit
+        working-directory: backend
         run: poetry run pre-commit run --all-files
