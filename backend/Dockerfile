@@ -47,9 +47,9 @@ COPY --from=builder-base $PROJECT_PATH $PROJECT_PATH
 RUN --mount=type=cache,target=/root/.cache \
     poetry install --with dev,lint
 
-COPY src ./src
+COPY taskmanager ./taskmanager
 
-CMD ["python3", "-Om", "src"]
+CMD ["python3", "-Om", "taskmanager"]
 
 
 ################################
@@ -60,6 +60,6 @@ WORKDIR $PROJECT_PATH
 
 COPY --from=builder-base $PROJECT_PATH/.venv $PROJECT_PATH/.venv
 
-COPY src ./src
+COPY taskmanager ./taskmanager
 
-CMD ["python3", "-Om", "src"]
+CMD ["python3", "-Om", "taskmanager"]

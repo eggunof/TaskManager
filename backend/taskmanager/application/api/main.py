@@ -5,7 +5,7 @@ import asyncio
 import uvicorn
 from fastapi import FastAPI
 
-from src.application.api.controllers.main import setup_controllers
+from taskmanager.application.api.controllers.main import setup_controllers
 
 
 def init_api(
