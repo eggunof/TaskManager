@@ -3,8 +3,6 @@ name = "taskmanager"
 version = "0.1.0"
 description = ""
 authors = ["eggunof <eggunof@gmail.com>"]
-license = "MIT"
-readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
