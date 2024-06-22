@@ -49,7 +49,7 @@ RUN --mount=type=cache,target=/root/.cache \
 
 COPY taskmanager ./taskmanager
 
-CMD ["python3", "-Om", "taskmanager"]
+CMD ["uvicorn", "--factory", "taskmanager.application.api.main:create_app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 
 ################################
@@ -62,4 +62,4 @@ COPY --from=builder-base $PROJECT_PATH/.venv $PROJECT_PATH/.venv
 
 COPY taskmanager ./taskmanager
 
-CMD ["python3", "-Om", "taskmanager"]
+CMD ["uvicorn", "--factory", "taskmanager.application.api.main:create_app", "--host", "0.0.0.0", "--port", "8000"]
