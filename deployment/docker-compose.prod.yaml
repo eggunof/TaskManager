@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+      target: production
+    restart: always
+    env_file: env/.env.prod
+    ports:
+      - "${API_PORT}:8000"
+    networks:
+      - backend
+    hostname: api
+
+networks:
+  backend:
+    driver: bridge

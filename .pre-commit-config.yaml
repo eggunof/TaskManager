@@ -12,10 +12,16 @@ repos:
     rev: 24.3.0
     hooks:
       - id: black
+        args:
+          [
+            "--config=backend/pyproject.toml",
+          ]
+        files: ^backend/.*\.py$
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
+        files: ^backend/.*\.py$
   - repo: local
     hooks:
       - id: pylint
@@ -23,14 +29,18 @@ repos:
         entry: pylint
         args:
           [
-            "--rcfile=.pylintrc",
+            "--rcfile=backend/.pylintrc",
           ]
         language: system
-        types: [ python ]
+        files: ^backend/.*\.py$
         require_serial: true
       - id: mypy
         name: MyPy
         entry: mypy
+        args:
+          [
+            "--config-file=backend/mypy.ini",
+          ]
         language: system
-        files: \.py$
+        files: ^backend/.*\.py$
         require_serial: true
