@@ -4,3 +4,8 @@ updates:
     directory: "/backend"
     schedule:
       interval: "weekly"
+    groups:
+      production-deps:
+        dependency-type: "production"
+      development-deps:
+        dependency-type: "development"
