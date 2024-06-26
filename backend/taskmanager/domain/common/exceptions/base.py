@@ -5,19 +5,19 @@ from typing import ClassVar
 
 
 @dataclass(eq=False)
-class ApplicationError(Exception):
-    """A base class for all application errors"""
+class AppError(Exception):
+    """A base class for all errors"""
 
     status: ClassVar[int] = 500
 
     @property
     def title(self) -> str:
         """Title of the error"""
-        return "An application error occurred"
+        return "An app error occurred"
 
 
 @dataclass(eq=False)
-class DomainError(ApplicationError):
+class DomainError(AppError):
     """A base class for domain errors"""
 
     @property
