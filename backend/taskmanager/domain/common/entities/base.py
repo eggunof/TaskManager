@@ -1,12 +1,16 @@
 """Defines the base class for entities"""
 
 from abc import ABC
-from dataclasses import dataclass, field
-from uuid import UUID, uuid4
+from dataclasses import dataclass
+from typing import Any, Generic, TypeVar
+
+from taskmanager.domain.common.values.base import ValueObject
+
+EntityId = TypeVar("EntityId", bound=ValueObject[Any])
 
 
 @dataclass
-class Entity(ABC):
+class Entity(Generic[EntityId], ABC):
     """A base class for entities"""
 
-    id: UUID = field(default_factory=uuid4, init=False, kw_only=True)
+    id: EntityId

@@ -3,12 +3,12 @@
 from abc import ABC
 from dataclasses import dataclass, field
 
-from taskmanager.domain.common.entities.base import Entity
+from taskmanager.domain.common.entities.base import Entity, EntityId
 from taskmanager.domain.common.events.base import Event
 
 
 @dataclass
-class AggregateRoot(Entity, ABC):
+class AggregateRoot(Entity[EntityId], ABC):
     """A class representing an aggregate root"""
 
     _events: list[Event] = field(default_factory=list, init=False, repr=False, hash=False, compare=False)
