@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from taskmanager.application.api.controllers.routers.default import default_router
+from taskmanager.presentation.api.controllers.routers.default import default_router
 
 
 def setup_controllers(app: FastAPI) -> None:
