@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from taskmanager.application.api.controllers.main import setup_controllers
+from taskmanager.presentation.api.controllers.main import setup_controllers
 
 
 def create_app() -> FastAPI:
