@@ -8,16 +8,22 @@ V = TypeVar("V", bound=Any)
 
 
 @dataclass(frozen=True)
-class ValueObject(Generic[V], ABC):
+class BaseValueObject(ABC):
     """A base class for objects that represent values"""
-
-    _value: V
 
     def __post_init__(self) -> None:
         self._validate()
 
-    def _validate(self) -> None: ...
+    def _validate(self) -> None:
+        """Check the value is valid to create this value object."""
+
+
+@dataclass(frozen=True)
+class ValueObject(Generic[V], BaseValueObject, ABC):
+    """A base class for objects that represent only one value"""
+
+    value: V
 
     def to_raw(self) -> V:
-        """Returns raw value"""
-        return self._value
+        """Return a raw value"""
+        return self.value
