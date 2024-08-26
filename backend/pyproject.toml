@@ -21,7 +21,7 @@ optional = true
 
 [tool.poetry.group.lint.dependencies]
 pylint = "^3.2.6"
-mypy = "^1.11.1"
+mypy = "^1.11.2"
 black = "^24.8.0"
 isort = "^5.13.2"
 
