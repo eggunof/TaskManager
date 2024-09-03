@@ -25,6 +25,13 @@ mypy = "^1.11.2"
 black = "^24.8.0"
 isort = "^5.13.2"
 
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.2"
+faker = "^26.0.0"
+
 [tool.black]
 line-length = 120
 target-version = ["py310"]
