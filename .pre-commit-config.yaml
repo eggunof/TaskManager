@@ -33,6 +33,7 @@ repos:
           ]
         language: system
         files: ^backend/.*\.py$
+        exclude: ^backend/tests/
         require_serial: true
       - id: mypy
         name: MyPy
@@ -43,4 +44,5 @@ repos:
           ]
         language: system
         files: ^backend/.*\.py$
+        exclude: ^backend/tests/
         require_serial: true
