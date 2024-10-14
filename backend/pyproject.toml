@@ -14,7 +14,7 @@ uvicorn = "^0.31.0"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^3.8.0"
+pre-commit = "^4.0.1"
 
 [tool.poetry.group.lint]
 optional = true
@@ -22,7 +22,7 @@ optional = true
 [tool.poetry.group.lint.dependencies]
 pylint = "^3.3.1"
 mypy = "^1.11.2"
-black = "^24.8.0"
+black = "^24.10.0"
 isort = "^5.13.2"
 
 [tool.poetry.group.test]
@@ -30,7 +30,7 @@ optional = true
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
-faker = "^30.0.0"
+faker = "^30.3.0"
 
 [tool.black]
 line-length = 120
