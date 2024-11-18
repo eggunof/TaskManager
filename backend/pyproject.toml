@@ -30,7 +30,7 @@ optional = true
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
-faker = "^30.8.2"
+faker = "^33.0.0"
 
 [tool.black]
 line-length = 120
