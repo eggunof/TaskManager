@@ -1,7 +1,7 @@
 ################################
 # PYTHON-BASE
 ################################
-FROM python:3.10.12-alpine as python-base
+FROM python:3.10.12-alpine AS python-base
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -23,7 +23,7 @@ ENV PATH="$PROJECT_PATH/.venv/bin:$POETRY_HOME/bin:$PATH"
 ################################
 # BUILDER-BASE
 ################################
-FROM python-base as builder-base
+FROM python-base AS builder-base
 
 RUN python3 -m venv $POETRY_HOME && \
     $POETRY_HOME/bin/pip install poetry==$POETRY_VERSION
@@ -38,7 +38,7 @@ RUN --mount=type=cache,target=/root/.cache \
 ################################
 # DEVELOPMENT
 ################################
-FROM python-base as development
+FROM python-base AS development
 WORKDIR $PROJECT_PATH
 
 COPY --from=builder-base $POETRY_HOME $POETRY_HOME
@@ -55,7 +55,7 @@ CMD ["uvicorn", "--factory", "taskmanager.presentation.api.main:create_app", "--
 ################################
 # PRODUCTION
 ################################
-FROM python-base as production
+FROM python-base AS production
 WORKDIR $PROJECT_PATH
 
 COPY --from=builder-base $PROJECT_PATH/.venv $PROJECT_PATH/.venv
