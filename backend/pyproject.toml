@@ -20,7 +20,7 @@ pre-commit = "^4.0.1"
 optional = true
 
 [tool.poetry.group.lint.dependencies]
-pylint = "^3.3.1"
+pylint = "^3.3.2"
 mypy = "^1.13.0"
 black = "^24.10.0"
 isort = "^5.13.2"
@@ -29,8 +29,8 @@ isort = "^5.13.2"
 optional = true
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.3.3"
-faker = "^33.0.0"
+pytest = "^8.3.4"
+faker = "^33.1.0"
 
 [tool.black]
 line-length = 120
